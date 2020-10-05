@@ -13,15 +13,15 @@
 # limitations under the License.
 
 cask "amazon-ena-ethernet" do
-  version "1.4.1"
-  sha256 "ea8103e3d91fadd698be48bf84b5492676955ba8e71c4fad82dddc2f0c4847b8"
+  version "1.4.2"
+  sha256 "30c6a2d0082aca87d3f5b404a010ba8d37eea1f12a41d49f12e134b753fd591c"
 
   # amazon was verified as official when first introduced to the cask
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.4.1-4.pkg"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.4.2-1.pkg"
   name "Amazon ENA Ethernet"
   homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html"
 
-  pkg "amazon-ena-ethernet-1.4.1-4.pkg"
+  pkg "amazon-ena-ethernet-1.4.2-1.pkg"
 
   uninstall pkgutil: "com.amazon.ec2.ena-ethernet"
 end
