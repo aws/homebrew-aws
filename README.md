@@ -1,22 +1,29 @@
+# Introduction
+
+AWS offers EC2-optimized [macOS AMI] for developers use.
+
+This repository helps guide developers wanting to learn about the content of EC2-optimized macOS AMI and build a custom AMI.
+
 # EC2 macOS Homebrew Tap
 
-[Homebrew](https://brew.sh) is a package manager for macOS which provides easy installation and update management of [additional software](https://formulae.brew.sh/). This Tap (repository) contains the Formulae that make macOS on EC2 great. This includes:
+[Homebrew](https://brew.sh) is a package manager for macOS which provides easy installation and update management of [additional software](https://formulae.brew.sh/). This Tap (repository) contains the formulae that are used in the macOS AMI that AWS offers. This includes:
 
 
 | Name | Description | Type | Install Name|
 |------|-------------|------|-------------|
-| Amazon ENA Ethernet | [ENA Driver for networking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html) | Cask | amazon-ena-ethernet |
+| Amazon ENA | [ENA macOS Network Driver](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html) | Cask | amazon-ena-ethernet |
 | Amazon SSM Agent    | [Amazon SSM Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html)| Cask| amazon-ssm-agent |
-| EC2 macOS Init      | Instance initialization and configuration | Keg | ec2-macos-init |
-| EC2 System Monitor for macOS | Sends metrics for CloudWatch metrics | Keg | ec2-macos-system-monitoring | 
+| EC2 macOS Init      | Instance initialization and configuration, including performance optimization | Keg | ec2-macos-init |
+| EC2 System Monitor for macOS | For collecting CloudWatch metrics | Keg | ec2-macos-system-monitoring | 
 
 ## Installing the Tap
-The AMIs provided by EC2 come with Homebrew "pretapped" with this Tap. To manually install the Tap, run the the `brew tap` command:
+
+The AMIs provided by AWS come with Homebrew "pretapped" with this Tap. To manually install the Tap on other macOS, run  the `brew tap` command:
 
 `brew tap aws/homebrew-aws`
 
 ## Removing the Tap
-If this Tap needs to be removed, Homebrew has a specific [command](https://docs.brew.sh/Taps) for this. Note that this only removes the Tap but preserves anything previously installed.
+If the developer with to remove the Tap from the macOS AMI, Use the next command. (*Note:* This only removes the Tap but preserves anything previously installed)
 
 `brew untap aws/homebrew-aws`
 
@@ -24,9 +31,7 @@ If this Tap needs to be removed, Homebrew has a specific [command](https://docs.
 This Tap follows standard Homebrew commands, for more information, please refer to the [Homebrew Documentation](https://docs.brew.sh/).
 
 ### Updating
-The most common use for the Tap is to get the latest software available on a launched instance. Updating is all done via `brew update`.
-
-For example:
+The most common use for the Tap is to get the latest software available on a launched instance. Updating is all done via `brew update`. It is possible to update specific Keg or Cask. For example:
 
 | Type  | Update Command|
 |-------|--------|
@@ -35,7 +40,10 @@ For example:
 | Cask  |`brew cask upgrade amazon-ena-ethernet`|
 
 ### Installing
-There are two primary ways to install software from the Tap. Kegs use the default `brew install` command while Casks have their own sub-command: `brew cask install`.
+
+All the components are pre-installed in the macOS AMI that AWS offers. 
+
+For manual install, there are two primary ways to install software from the Tap. Kegs use the default `brew install` command while Casks have their own sub-command: `brew cask install`.
 
 For example:
 
