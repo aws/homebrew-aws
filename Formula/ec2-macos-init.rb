@@ -14,9 +14,9 @@
 
 class Ec2MacosInit < Formula
   desc "EC2 macOS Init"
-  homepage "https://docs.aws.amazon.com/AWSEC2/latest/macOSGuide/concepts.html"
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/ec2-macos-init-1.2.5.tar.gz"
-  sha256 "1ed0b6cc4bdb6ddd9f7f61bf3c8e0405882643b4c439c285deef0f4f2448d503"
+  homepage "https://github.com/aws/ec2-macos-init"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/ec2-macos-init-1.3.0.tar.gz"
+  sha256 "6864639ae77756f157efa495be79fbc7bb2619cc2e5ddaf4fb42e5ca4aaa3690"
   license "Apache-2.0"
 
   depends_on "go" => :build
@@ -31,17 +31,19 @@ class Ec2MacosInit < Formula
     system "go", "get", "github.com/digineo/go-ping"
 
     commit_date = File.read("configuration/commitdate.txt").strip
-    build_version = File.read("configuration/version.txt").strip
 
     # Go build
-    cd "src/golang.a2z.com/EC2-macOS-init" do
-      system "go",
-             "build",
-             "-trimpath",
-             "-ldflags",
-             "-s -w -X 'main.CommitDate=#{commit_date}' -X 'main.Version=#{build_version}'"
-      bin.install "EC2-macOS-init" => "ec2-macos-init"
-    end
+    mkdir_p buildpath/"src/github.com/aws/"
+    ln_s buildpath, buildpath/"src/github.com/aws/ec2-macos-init"
+
+    system "go",
+           "build",
+           "-o",
+           "ec2-macos-init",
+           "-trimpath",
+           "-ldflags",
+           "-s -w -X 'main.CommitDate=#{commit_date}' -X 'main.Version=#{version}'"
+    bin.install "ec2-macos-init"
     libexec.install "configuration/init.toml" => "init.toml"
     libexec.install "Library/LaunchDaemons/com.amazon.ec2.macos-init.plist"
   end
