@@ -13,15 +13,15 @@
 # limitations under the License.
 
 cask "amazon-ssm-agent" do
-  version "3.0.502-0"
-  sha256 "da343110e29f93e668df7cd68432b39f1a77630809b413bfc8071b327984fc4f"
+  version "3.0.529-0"
+  sha256 "f09fa67e270f87e800de597d4317e6da0b81ce68e4f42b2ea16d7a565a31af8e"
 
   # amazon was verified as official when first introduced to the cask
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ssm-agent-3.0.502-0.pkg"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ssm-agent-3.0.529-0.pkg"
   name "Amazon SSM Agent"
   homepage "https://github.com/aws/amazon-ssm-agent"
 
-  pkg "amazon-ssm-agent-3.0.502-0.pkg"
+  pkg "amazon-ssm-agent-3.0.529-0.pkg"
 
   uninstall pkgutil: "com.amazon.aws.ssm"
 end

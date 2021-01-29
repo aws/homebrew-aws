@@ -15,8 +15,8 @@
 class Ec2MacosInit < Formula
   desc "EC2 macOS Init"
   homepage "https://github.com/aws/ec2-macos-init"
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/ec2-macos-init-1.3.0.tar.gz"
-  sha256 "6864639ae77756f157efa495be79fbc7bb2619cc2e5ddaf4fb42e5ca4aaa3690"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/ec2-macos-init-1.4.0.tar.gz"
+  sha256 "e7f807382bfd73d4a0fd4af7f428cca183615eee7191fea6ec68352c31a151f8"
   license "Apache-2.0"
 
   depends_on "go" => :build
