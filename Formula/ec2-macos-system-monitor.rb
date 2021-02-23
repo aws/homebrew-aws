@@ -27,6 +27,7 @@ class Ec2MacosSystemMonitor < Formula
     system "go", "get", "go.bug.st/serial"
     system "go", "get", "github.com/shirou/gopsutil"
     system "go", "get", "golang.org/x/sys/unix"
+    system "go", "get", "github.com/tklauser/go-sysconf"
     # Go build
     system "go", "build", "-trimpath", "-ldflags", "-s -w", "cmd/relayd/relayd.go"
     system "go", "build", "-trimpath", "-ldflags", "-s -w", "cmd/cpuutilization/cpuutilization.go"

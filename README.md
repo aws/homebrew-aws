@@ -11,7 +11,7 @@ AWS offers EC2-optimized macOS AMIs for developer use. These AMIs include this T
 |------|-------------|------|-------------|
 | Amazon ENA | [ENA macOS Network Driver](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html) | Cask | amazon-ena-ethernet |
 | Amazon SSM Agent    | [Amazon SSM Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html)| Cask| amazon-ssm-agent |
-| Amazon EFS | [Amazon Elastic File System](https://docs.aws.amazon.com/efs/latest/ug/using-amazon-efs-utils.html) | Formula | amazon-efs-utils |
+| Amazon EFS | [Amazon Elastic File System](https://docs.aws.amazon.com/efs/latest/ug/using-amazon-efs-utils.html) | Keg | amazon-efs-utils |
 | EC2 macOS Init      | Instance initialization and configuration, including performance optimization | Keg | ec2-macos-init |
 | EC2 System Monitor for macOS | For collecting system monitoring CloudWatch metrics | Keg | ec2-macos-system-monitoring | 
 
