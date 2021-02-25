@@ -25,6 +25,9 @@ class Ec2MacosInit < Formula
     ENV["GOPATH"] = buildpath
     ENV["CGO_ENABLED"] = "0"
 
+    # Turn off module style for go 1.16 until we get module support enabled
+    system "go", "env", "-w", "GO111MODULE=off"
+
     # Install dependencies
     system "go", "get", "github.com/BurntSushi/toml"
     system "go", "get", "github.com/google/go-cmp/cmp"

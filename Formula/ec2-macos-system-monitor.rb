@@ -23,6 +23,9 @@ class Ec2MacosSystemMonitor < Formula
 
   def install
     ENV["GOPATH"] = buildpath
+
+    # Turn off module style for go 1.16 until we get module support enabled
+    system "go", "env", "-w", "GO111MODULE=off"
     # Install dependencies
     system "go", "get", "go.bug.st/serial"
     system "go", "get", "github.com/shirou/gopsutil"
