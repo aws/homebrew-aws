@@ -13,15 +13,27 @@
 # limitations under the License.
 
 cask "amazon-ena-ethernet" do
-  version "1.4.2"
-  sha256 "30c6a2d0082aca87d3f5b404a010ba8d37eea1f12a41d49f12e134b753fd591c"
+  version "1.5.0"
 
-  # amazon was verified as official when first introduced to the cask
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.4.2-1.pkg"
+  if MacOS.version <= :mojave
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.5.0-1.mojave.pkg",
+        verified: "amazon"
+    sha256 "721ffeff3c82beaafbff237a5ec143e568000a35ebcb073d1c3381ec523881a3"
+    pkg "amazon-ena-ethernet-1.5.0-1.mojave.pkg"
+  elsif MacOS.version <= :catalina
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.5.0-1.catalina.pkg",
+        verified: "amazon"
+    sha256 "758d5c8cb1e8db6aa92931268ce8a57fe0ec23f965bc00708c487f4d0372c275"
+    pkg "amazon-ena-ethernet-1.5.0-1.catalina.pkg"
+  elsif MacOS.version <= :big_sur
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ena-ethernet-1.5.0-1.bigsur.pkg",
+        verified: "amazon"
+    sha256 "d96a1d02a1194f4baf42622563b018247e554d2ecacafc4184e0041a0f715e87"
+    pkg "amazon-ena-ethernet-1.5.0-1.bigsur.pkg"
+  end
+
   name "Amazon ENA Ethernet"
   homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html"
-
-  pkg "amazon-ena-ethernet-1.4.2-1.pkg"
 
   uninstall pkgutil: "com.amazon.ec2.ena-ethernet"
 end
