@@ -14,42 +14,29 @@
 
 class Ec2MacosSystemMonitor < Formula
   desc "EC2 System Monitor for macOS"
-  homepage "https://docs.aws.amazon.com/AWSEC2/latest/macOSGuide/concepts.html"
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/ec2-macos-system-monitor-1.1.0.tar.gz"
-  sha256 "65d7ef52f4f7ef7c853455db09c1b65349a84291002abfe722d046652210a5cd"
+  homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/formula/ec2-macos-system-monitor/ec2-macos-system-monitor-1.2.0.tar.gz"
+  sha256 "277204db4a4dac507e5b73779723aa1df960f67083cd325f840b60616884ef92"
   license "Apache-2.0"
 
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-
-    # Turn off module style for go 1.16 until we get module support enabled
-    system "go", "env", "-w", "GO111MODULE=off"
-    # Install dependencies
-    system "go", "get", "go.bug.st/serial"
-    system "go", "get", "github.com/shirou/gopsutil"
-    system "go", "get", "golang.org/x/sys/unix"
-    system "go", "get", "github.com/tklauser/go-sysconf"
     # Go build
-    system "go", "build", "-trimpath", "-ldflags", "-s -w", "cmd/relayd/relayd.go"
-    system "go", "build", "-trimpath", "-ldflags", "-s -w", "cmd/cpuutilization/cpuutilization.go"
+    system "go", "build", "-o", "cpuutilization", "-ldflags", "-s -w", "main.go"
     (libexec/"bin").mkpath
     libexec.install "cpuutilization" => "bin/send-cpu-utilization"
-    libexec.install "relayd" => "bin/ec2monitoring-relayd"
-    inreplace "bin/setup-ec2monitoring", "/usr/local/Cellar", libexec.to_s
-    bin.install "bin/setup-ec2monitoring"
-    inreplace "configuration/com.amazon.ec2.monitoring.agents.cpuutilization.plist",
+    inreplace "scripts/setup-ec2monitoring", "/usr/local/Cellar", libexec.to_s
+    bin.install "scripts/setup-ec2monitoring"
+    inreplace "init/com.amazon.ec2.monitoring.agents.cpuutilization.plist",
               "/usr/local/libexec",
-              "#{libexec}/bin"
-    inreplace "configuration/com.amazon.ec2.monitoring.relayd.plist", "/usr/local/libexec", "#{libexec}/bin"
-    libexec.install "configuration/com.amazon.ec2.monitoring.agents.cpuutilization.plist"
-    libexec.install "configuration/com.amazon.ec2.monitoring.relayd.plist"
+              "#{opt_prefix}/libexec/bin"
+    libexec.install "init/com.amazon.ec2.monitoring.agents.cpuutilization.plist"
   end
 
   def caveats
     <<~EOS
-      #{name} must be enabled/disabled with the tool setup-ec2monitoring.
+      #{name} must be enabled/disabled with the tool setup-ec2monitoring. If this was an update, another "enable" may be required.
 
         To enable/install #{name}:
 
