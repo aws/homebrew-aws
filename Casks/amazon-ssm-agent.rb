@@ -13,11 +13,11 @@
 # limitations under the License.
 
 cask "amazon-ssm-agent" do
-  version "3.0.529-0"
-  sha256 "f09fa67e270f87e800de597d4317e6da0b81ce68e4f42b2ea16d7a565a31af8e"
+  version "3.0.1031-0"
+  sha256 "d85c8ed6669802578a4484fc9f2ea4ddab04c7a1dd574bdbc3d61812eebf5970"
 
   # amazon was verified as official when first introduced to the cask
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/amazon-ssm-agent-3.0.529-0.pkg"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/amazon-ssm-agent-#{version}.pkg"
   name "Amazon SSM Agent"
   homepage "https://github.com/aws/amazon-ssm-agent"
 
@@ -61,7 +61,7 @@ cask "amazon-ssm-agent" do
     system_command "/bin/bash", args: [script.path], sudo: true
   end
 
-  pkg "amazon-ssm-agent-3.0.529-0.pkg"
+  pkg "amazon-ssm-agent-#{version}.pkg"
 
   uninstall pkgutil: "com.amazon.aws.ssm"
 end
