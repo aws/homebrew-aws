@@ -21,6 +21,46 @@ cask "amazon-ssm-agent" do
   name "Amazon SSM Agent"
   homepage "https://github.com/aws/amazon-ssm-agent"
 
+  script = Tempfile.new('ensure_no_com.amazon.aws.ssm_')
+  script.write <<~'EOS'
+    #! /bin/bash
+
+    num_trials=10
+
+    check_agent() {
+      launchctl list com.amazon.aws.ssm >/dev/null 2>&1
+    }
+
+    check_agent || exit 0
+
+    echo "Deleting the service system/com.amazon.aws.ssm"
+    if ! launchctl remove com.amazon.aws.ssm; then
+        echo "Failed to remove system/com.amazon.aws.ssm"
+        exit 1
+    fi
+
+    n=0
+    while check_agent; do
+      if [ "$n" -ge "$num_trials" ]; then
+        echo "Waited for $num_trials seconds, but the agent is still running"
+        exit 1
+      fi
+      sleep 1
+      n="$((n+1))"
+    done
+    echo "system/com.amazon.aws.ssm has been deleted"
+  EOS
+  script.close
+
+  # This is for upgrading from old versions which don't have uninstall_preflight
+  preflight do
+    system_command "/bin/bash", args: [script.path], sudo: true
+  end
+
+  uninstall_preflight do
+    system_command "/bin/bash", args: [script.path], sudo: true
+  end
+
   pkg "amazon-ssm-agent-3.0.529-0.pkg"
 
   uninstall pkgutil: "com.amazon.aws.ssm"
