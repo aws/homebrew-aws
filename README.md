@@ -12,8 +12,8 @@ AWS offers EC2-optimized macOS AMIs for developer use. These AMIs include this T
 | Amazon ENA | [ENA macOS Network Driver](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html) | Cask | amazon-ena-ethernet |
 | Amazon SSM Agent    | [Amazon SSM Agent](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html)| Cask| amazon-ssm-agent |
 | Amazon EFS | [Amazon Elastic File System](https://docs.aws.amazon.com/efs/latest/ug/using-amazon-efs-utils.html) | Keg | amazon-efs-utils |
-| EC2 macOS Init      | Instance initialization and configuration, including performance optimization | Keg | ec2-macos-init |
-| EC2 System Monitor for macOS | For collecting system monitoring CloudWatch metrics | Keg | ec2-macos-system-monitoring | 
+| EC2 macOS Init      | Instance initialization and configuration, including performance optimization | Cask | ec2-macos-init |
+| EC2 System Monitor for macOS | For collecting system monitoring CloudWatch metrics | Cask | ec2-macos-system-monitoring | 
 
 ## Installing the Tap
 The AMIs provided by EC2 come with Homebrew "pretapped" with this Tap. To manually install the Tap, run the the `brew tap` command:
@@ -36,7 +36,7 @@ For example:
 | Type  | Update Command|
 |-------|--------|
 | Full System| `brew upgrade` |
-| Keg   |`brew upgrade ec2-macos-init`| 
+| Keg   |`brew upgrade amazon-efs-utils`| 
 | Cask  |`brew upgrade --cask amazon-ena-ethernet`|
 
 ### Installing
@@ -46,7 +46,7 @@ For example:
 
 | Type | Install Command |
 |------|-----------------|
-| Keg  | `brew install ec2-macos-init` ||
+| Keg  | `brew install amazon-efs-utils` ||
 | Cask | `brew install --cask amazon-ena-ethernet` |
 
 ### Removing
@@ -56,7 +56,7 @@ For example:
 
 | Type | Uninstall Command |
 |------|-----------------|
-| Keg  | `brew remove ec2-macos-init` |
+| Keg  | `brew remove amazon-efs-utils` |
 | Cask | `brew remove amazon-ena-ethernet` |
 
 ## Documentation

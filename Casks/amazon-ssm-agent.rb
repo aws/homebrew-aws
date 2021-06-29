@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "amazon-ssm-agent" do
-  version "3.0.1031-0"
-  sha256 "d85c8ed6669802578a4484fc9f2ea4ddab04c7a1dd574bdbc3d61812eebf5970"
+  version "3.0.1295-0"
+  sha256 "cd3c1859cecf5329ce445ed28417a6612cbba97c2b92b9c0644ede9801b82812"
 
   # amazon was verified as official when first introduced to the cask
   url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/amazon-ssm-agent-#{version}.pkg"
