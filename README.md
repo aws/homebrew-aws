@@ -2,7 +2,7 @@
 
 ## Introduction
 
-AWS offers EC2-optimized macOS AMIs for developer use. These AMIs include this Tap for providing a simple way to get these tools and updates to them.
+AWS offers EC2-optimized [macOS AMIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html#ec2-macos-images) for developer use. These AMIs include this Tap for providing a simple way to get these tools and updates to them.
 
 [Homebrew](https://brew.sh) is a package manager for macOS which provides easy installation and update management of [additional software](https://formulae.brew.sh/). This Tap (repository) contains the formulae that are used in the macOS AMI that AWS offers. This includes:
 
@@ -16,51 +16,49 @@ AWS offers EC2-optimized macOS AMIs for developer use. These AMIs include this T
 | EC2 System Monitor for macOS | For collecting system monitoring CloudWatch metrics | Cask | ec2-macos-system-monitoring | 
 
 ## Installing the Tap
-The AMIs provided by EC2 come with Homebrew "pretapped" with this Tap. To manually install the Tap, run the the `brew tap` command:
+The AMIs provided by AWS come with Homebrew "pretapped" with this Tap. To manually install the Tap, run the the `brew tap` [command](https://docs.brew.sh/Taps):
 
-`brew tap aws/homebrew-aws`
+`brew tap aws/aws`
 
 ## Removing the Tap
-If this Tap needs to be removed, Homebrew has a specific [command](https://docs.brew.sh/Taps) for this. (*Note:* that this only removes the Tap but preserves anything previously installed)
+To manually remove the tap, run the `brew untap` [command](https://docs.brew.sh/Taps):
+(*Note:* This only removes the Tap but preserves any packages previously installed from that Tap.)
 
-`brew untap aws/homebrew-aws`
+`brew untap aws/aws`
 
 ## Usage
 This Tap follows standard Homebrew commands, for more information, please refer to the [Homebrew Documentation](https://docs.brew.sh/).
 
 ### Updating
-The most common use for the Tap is to get the latest software available on a launched instance. Updating is all done via `brew update`. This Tap follows standard Homebrew commands, for more information, please refer to the [Homebrew Documentation](https://docs.brew.sh/). It is possible to update a specific Keg or Cask.
+The most common use for the Tap is to get the latest software available on a launched instance. Updating is all done via `brew upgrade`. This Tap follows standard Homebrew commands, for more information, please refer to the [Homebrew Documentation](https://docs.brew.sh/). It is possible to update a specific package, or all installed packages.
 
 For example:
 
-| Type  | Update Command|
-|-------|--------|
-| Full System| `brew upgrade` |
-| Keg   |`brew upgrade amazon-efs-utils`| 
-| Cask  |`brew upgrade --cask amazon-ena-ethernet`|
+| Scope  | Update Command|
+|--------|--------|
+| All Packages | `brew upgrade` |
+| Specific Package   |`brew upgrade amazon-efs-utils`| 
 
 ### Installing
-There are two primary ways to install software from the Tap. Kegs use the default `brew install` command while Casks have their own sub-command: `brew install --cask`. Currently, all the components in the Tap are pre-installed in the macOS AMIs that AWS offers. 
+To install software from the Tap, use the `brew install` command. All the components in the Tap are pre-installed in the macOS AMIs that AWS offers. 
 
 For example:
 
-| Type | Install Command |
-|------|-----------------|
-| Keg  | `brew install amazon-efs-utils` ||
-| Cask | `brew install --cask amazon-ena-ethernet` |
+| Install Command |
+|-----------------|
+| `brew install amazon-ena-ethernet` |
 
 ### Removing
-Removing software is similar to installing software. Kegs and Casks now use the same `brew remove` command.
+Removing software is similar to installing software. 
 
 For example:
 
-| Type | Uninstall Command |
-|------|-----------------|
-| Keg  | `brew remove amazon-efs-utils` |
-| Cask | `brew remove amazon-ena-ethernet` |
+| Uninstall Command |
+|-----------------|
+| `brew remove amazon-ssm-agent` |
 
 ## Documentation
-To get more information about brew you can run `brew help` or `man brew` on a mac1.metal instance or check [Homebrew's documentation](https://docs.brew.sh) for Homebrew's complete documentation.
+To get more information about [brew](https://brew.sh) you can run `brew help` or `man brew` on a macOS instance, or check [Homebrew's documentation](https://docs.brew.sh) for Homebrew's complete documentation.
 
 ## License
 
