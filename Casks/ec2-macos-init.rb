@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "ec2-macos-init" do
-    version "1.5.0"
-    sha256 "15ea1f18da0896b5003c5a243338d6c0958960f9b82e2fb381a0be1d8672a792"
+    version "1.5.1"
+    sha256 "ba483099b9bed4ccf414c9ff750dba8c5fd1937ceb37795a30680129a7598d19"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/ec2-macos-init-#{version}.pkg",
         verified: "amazon"
