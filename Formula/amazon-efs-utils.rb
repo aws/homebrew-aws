@@ -49,11 +49,6 @@ class AmazonEfsUtils < Formula
     sha256 "e07d9f1a23e9e93ab5c62902833bf3e4b1f65502927379148b6622686223125c"
   end
 
-  resource "docutils" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5f75c682/docutils-0.15.2.tar.gz"
-    sha256 "a2aeea129088da402665e92e0b25b04b073c04b2dce4ab65caaa38b7ce2e1a99"
-  end
-
   resource "entrypoints" do
     url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5f75c682/entrypoints-0.3.tar.gz"
     sha256 "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"
@@ -171,7 +166,7 @@ class AmazonEfsUtils < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3")
-    %w[atomicwrites attrs botocore configparser coverage docutils entrypoints flake8 funcsigs jmespath mccabe
+    %w[atomicwrites attrs botocore configparser coverage entrypoints flake8 funcsigs jmespath mccabe
        mock more-itertools packaging pbr pluggy py pycodestyle pyflakes pyparsing pytest pytest-cov pytest-html
        pytest-metadata pytest-mock python-dateutil six urllib3 wcwidth].each do |r|
       venv.pip_install resource(r)
