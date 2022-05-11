@@ -13,16 +13,19 @@
 # limitations under the License.
 
 cask "ec2-macos-init" do
-    version "1.5.1"
-    sha256 "ba483099b9bed4ccf414c9ff750dba8c5fd1937ceb37795a30680129a7598d19"
+    version "1.5.2"
+    sha256 "9a54d31edf9c1e079f90f632be51398cdbfe19975c455b1cb865182e2d507eb9"
 
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/ec2-macos-init-#{version}.pkg",
+    build_version = "1"
+    pkg_file = "ec2-macos-init-#{version}-#{build_version}_universal.pkg"
+
+    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/#{pkg_file}",
         verified: "amazon"
     name "EC2 macOS Init"
     desc "Launch daemon used to initialize Mac instances within EC2"
     homepage "https://github.com/aws/ec2-macos-init"
 
-    pkg "ec2-macos-init-#{version}.pkg"
+    pkg pkg_file
 
     uninstall pkgutil: "com.amazon.ec2.macos-init"
 
