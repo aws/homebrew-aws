@@ -17,8 +17,8 @@ class AmazonEfsUtils < Formula
 
   desc "Utilities for Amazon Elastic File System (EFS)"
   homepage "https://aws.amazon.com/efs/"
-  url "https://aws-homebrew.s3.us-west-2.amazonaws.com/formula/amazon-efs-utils/v1.33.1.tar.gz"
-  sha256 "a62dba9d76224420ea65b0c7107d5b4dbf3273edba592a48e84a622570515150"
+  url "https://aws-homebrew.s3.us-west-2.amazonaws.com/formula/amazon-efs-utils/v1.33.2.tar.gz"
+  sha256 "c332517fbb64be709045c268193573c7188f7d5778226626df46632861e7e1ae"
   license "MIT"
 
   depends_on "python@3"
