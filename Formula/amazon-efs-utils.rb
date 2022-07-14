@@ -204,18 +204,22 @@ class AmazonEfsUtils < Formula
 
   def caveats
     <<~EOS
-      Perform below actions to start using efs:
+      To start using Amazon EFS on EC2 x86 Mac instances (mac1.metal):
         sudo mkdir -p /Library/Filesystems/efs.fs/Contents/Resources
         sudo ln -s /usr/local/bin/mount.efs /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
 
-      Perform below actions to stop using efs:
+      To start using Amazon EFS on EC2 M1 Mac instances (mac2.metal):
+        sudo mkdir -p /Library/Filesystems/efs.fs/Contents/Resources
+        sudo ln -s /opt/homebrew/bin/mount.efs /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
+
+      To stop using Amazon EFS on EC2 Mac instances:
         sudo rm /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
 
-      To enable watchdog for using TLS mounts:
+      To enable watchdog for TLS mounts:
         sudo cp #{libexec}/amazon-efs-mount-watchdog.plist /Library/LaunchAgents
         sudo launchctl load /Library/LaunchAgents/amazon-efs-mount-watchdog.plist
 
-      To disable watchdog for using TLS mounts:
+      To disable watchdog for TLS mounts:
           sudo launchctl unload /Library/LaunchAgents/amazon-efs-mount-watchdog.plist
     EOS
   end
