@@ -15,8 +15,8 @@
 class AmazonEfsUtils < Formula
   include Language::Python::Virtualenv
 
-  version "1.34.5"
-  sha256 "317fa6d9ca35f84c00b0595462def018eb1375372334174ee8f00b107f98e0d1"
+  version "1.35.0"
+  sha256 "e9c23b046e3ebf24d7679997e869e85ee5723ffcbd94d5337a0fd6e5e4808f95"
   
   url "https://aws-homebrew.s3.us-west-2.amazonaws.com/formula/amazon-efs-utils/v#{version}.tar.gz"
   desc "Utilities for Amazon Elastic File System (EFS)"
