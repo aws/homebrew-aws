@@ -17,12 +17,16 @@ cask "amazon-ena-ethernet-dext" do
     dextDriverKitVersion = "21.2"
   
     if Hardware::CPU.arm?
-      if MacOS.version >= :monterey
+        if MacOS.version >= :monterey
             url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet-dext/amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg",
                 verified: "amazon"
             sha256 "8a1620289d5ffdcb16e7aaac8eb2bfb732cde3215bbb9988bfa6713917b1fe3f"
             pkg "amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg"
-        end 
+        else
+            raise "The amazon-ena-ethernet-dext Cask does not support macOS #{MacOS.version}."
+        end
+    else
+        raise "The amazon-ena-ethernet-dext Cask only supports the arm architecture."
     end
   
     name "Amazon ENA Ethernet Dext"
