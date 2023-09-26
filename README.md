@@ -79,7 +79,7 @@ For example:
 
 ### Removing Packages
 
-Removing software is similar to installing software. Kegs and Casks now use the same `brew remove <pacakge>` command.
+Removing software is similar to installing software. Kegs and Casks now use the same `brew remove <package>` command.
 
 For example:
 
