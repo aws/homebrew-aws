@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "ec2-macos-utils" do
-    version "1.0.1"
-    sha256 "1983f1f2028060fc6249a9dc1baaa4586f0ff4e75dc5f425142f962c4d1eedc9"
+    version "1.0.3"
+    sha256 "f01eb4aef002b7a419d9c6ef953d7a999f8a06a49164fdef3bb5a333b9aa8561"
 
     build_version = "1"
     pkg_file = "ec2-macos-utils-#{version}-#{build_version}_universal.pkg"
