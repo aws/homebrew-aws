@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "ec2-macos-init" do
-    version "1.5.7"
-    sha256 "4e117f9e726a59578d2922565b1e7a04866f71d5160476ca55fed30745e34de4"
+    version "1.5.9"
+    sha256 "c7a52b364f093783fed6d070eb024b20c4a30f2109be40f75c80212b8dd77a50"
 
     build_version = "1"
     pkg_file = "ec2-macos-init-#{version}-#{build_version}_universal.pkg"
