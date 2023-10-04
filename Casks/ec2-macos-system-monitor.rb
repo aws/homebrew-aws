@@ -13,16 +13,19 @@
 # limitations under the License.
 
 cask "ec2-macos-system-monitor" do
-    version "1.2.1"
-    sha256 "3cb8e77e6df22b964c64581d7d449770f017aa20737d1d0bd4a81430ced196e5"
+    version "1.3.0"
+    sha256 "6ac6170197065b1eac00ca5694a31375eb3b0da8557c8ee417b5846b50181b50"
 
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-system-monitor/ec2-macos-system-monitor-#{version}.pkg",
+    build_version = "1"
+    pkg_file = "ec2-macos-system-monitor-#{version}-#{build_version}_universal.pkg"
+
+    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-system-monitor/#{pkg_file}",
         verified: "amazon"
     name "EC2 System Monitor for macOS"
-    desc "Agent that runs on every mac1.metal instance to provide on-instance metrics in CloudWatch"
+    desc "Agent that runs on EC2 Mac instances to provide on-instance metrics in CloudWatch"
     homepage "https://github.com/aws/ec2-macos-system-monitor"
 
-    pkg "ec2-macos-system-monitor-#{version}.pkg"
+    pkg pkg_file
 
     uninstall_postflight do
         script = Tempfile.new('load_com.amazon.ec2.monitoring.agents.cpuutilization_')
