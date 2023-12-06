@@ -27,6 +27,7 @@ This includes:
 | EC2 macOS Init | Instance initialization and configuration, including performance optimization | Cask | ec2-macos-init |
 | EC2 System Monitor for macOS | For collecting system monitoring CloudWatch metrics on mac1.metal instances | Cask | ec2-macos-system-monitoring |
 | EC2 macOS Utils | Provides common command-line tool for customizing EC2 Mac instances | Cask | ec2-macos-utils | 
+| EC2 Instance Connect | [EC2 Instance Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html) | Cask | ec2-instance-connect |
 
 ## How do I install the packages from this Tap?
 
