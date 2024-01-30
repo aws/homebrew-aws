@@ -13,14 +13,14 @@
 # limitations under the License.
 
 cask "amazon-ena-ethernet-dext" do
-    version "1.0.4"
+    version "1.0.6-p1"
     dextDriverKitVersion = "21.2"
   
     if Hardware::CPU.arm?
         if MacOS.version >= :monterey
             url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet-dext/amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg",
                 verified: "amazon"
-            sha256 "8a1620289d5ffdcb16e7aaac8eb2bfb732cde3215bbb9988bfa6713917b1fe3f"
+            sha256 "3e42d3f611675f5dd590401dc2006508b2738e32458e40e23c38065dc92aa227"
             pkg "amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg"
         else
             raise "The amazon-ena-ethernet-dext Cask does not support macOS #{MacOS.version}."
