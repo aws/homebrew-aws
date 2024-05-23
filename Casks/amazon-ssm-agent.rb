@@ -13,13 +13,13 @@
 # limitations under the License.
 
 cask "amazon-ssm-agent" do
-  version "3.2.2303.0-1"
+  version "3.3.380.0-1"
   if Hardware::CPU.intel?
 	arch = "x86_64"
-	sha256 "a6a3a3a3f128932131240fd5aa2986d9de9a0fc19a1c2446ae85c53de61334c0"
+	sha256 "39ec3d922420af1c75061ed57a5fd4d7968f410261aa248f1d570d0a682dae2e"
   else
 	arch = "arm64"
-	sha256 "73010d195f7ad152ffdf39d1f754f29a74bfef599c191224ad8d5fa12965c422"
+	sha256 "b1580fbe2c5a3c8db4929b7cd8a4d053ca00a707ec1e82d5f5c1aae327a29300"
   end
   pkg_file = "amazon-ssm-agent-#{version}_#{arch}.pkg"
 
