@@ -15,7 +15,7 @@
 cask "amazon-ena-ethernet-dext" do
     version "1.0.7-p1"
     dextDriverKitVersion = "21.2"
-  
+
     if Hardware::CPU.arm?
         if MacOS.version >= :monterey
             url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet-dext/amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg",
@@ -28,9 +28,9 @@ cask "amazon-ena-ethernet-dext" do
     else
         raise "The amazon-ena-ethernet-dext Cask only supports the arm architecture."
     end
-  
+
     name "Amazon ENA Ethernet Dext"
     homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html"
-  
+
     uninstall pkgutil: "com.amazon.ec2.ena-ethernet.dext"
 end
