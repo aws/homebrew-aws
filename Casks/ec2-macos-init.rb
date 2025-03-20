@@ -13,10 +13,11 @@
 # limitations under the License.
 
 cask "ec2-macos-init" do
-    version "1.5.10-2"
+    build_version = "1.5.10-2"
+    version build_version.split("-").first
     sha256 "975a6f9228cc3b5b949598da65e1ad0b2d1fc4371ebf28cf68d3a3462c789a0c"
 
-    pkg_file = "ec2-macos-init-#{version}_universal.pkg"
+    pkg_file = "ec2-macos-init-#{build_version}_universal.pkg"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/#{pkg_file}",
         verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/"

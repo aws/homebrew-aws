@@ -13,7 +13,8 @@
 # limitations under the License.
 
 cask "amazon-ssm-agent" do
-  version "3.3.1957.0-1"
+  build_version = "3.3.1957.0-1"
+  version build_version.split("-").first
 
   if Hardware::CPU.intel?
         arch = "x86_64"
@@ -22,7 +23,7 @@ cask "amazon-ssm-agent" do
         arch = "arm64"
         sha256 "f7008138067da831d6ca3c05d464c060c7c6000ddc505770e1ecf43e34c8a254"
   end
-  pkg_file = "amazon-ssm-agent-#{version}_#{arch}.pkg"
+  pkg_file = "amazon-ssm-agent-#{build_version}_#{arch}.pkg"
 
   # amazon was verified as official when first introduced to the cask
   url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/#{pkg_file}",
