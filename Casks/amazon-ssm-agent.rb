@@ -73,5 +73,13 @@ cask "amazon-ssm-agent" do
 
   pkg pkg_file
 
+  livecheck do
+    url "https://github.com/aws/amazon-ssm-agent.git"
+
+    strategy :git do |tags|
+      tags.filter_map { |tag| tag[/^(\d+(?:\.\d+)+)$/, 1] }
+    end
+  end
+
   uninstall pkgutil: "com.amazon.aws.ssm"
 end

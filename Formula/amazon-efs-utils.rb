@@ -208,6 +208,14 @@ class AmazonEfsUtils < Formula
     libexec.install buildpath/"dist/amazon-efs-mount-watchdog.plist" => "amazon-efs-mount-watchdog.plist"
   end
 
+  livecheck do
+    url "https://github.com/aws/efs-utils.git"
+
+    strategy :git do |tags|
+      tags.filter_map { |tag| tag[/^v(\d+(?:\.\d+)+)$/, 1] }
+    end
+  end
+
   def caveats
     <<~EOS
       To start using Amazon EFS on EC2 x86 Mac instances (mac1.metal):
@@ -228,9 +236,5 @@ class AmazonEfsUtils < Formula
       To disable watchdog for TLS mounts:
           sudo launchctl unload /Library/LaunchAgents/amazon-efs-mount-watchdog.plist
     EOS
-  end
-
-  test do
-    system "false"
   end
 end

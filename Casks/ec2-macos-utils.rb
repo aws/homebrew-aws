@@ -26,5 +26,13 @@ cask "ec2-macos-utils" do
 
     pkg pkg_file
 
+    livecheck do
+      url "https://github.com/aws/ec2-macos-utils.git"
+
+      strategy :git do |tags|
+        tags.filter_map { |tag| tag[/^(\d+(?:\.\d+)+)$/, 1] }
+      end
+    end
+
     uninstall pkgutil: "com.amazon.ec2.macos-utils"
 end

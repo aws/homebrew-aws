@@ -64,6 +64,14 @@ cask "ec2-macos-system-monitor" do
 
     uninstall pkgutil: "com.amazon.ec2.system-monitor"
 
+    livecheck do
+      url "https://github.com/aws/ec2-macos-system-monitor.git"
+
+      strategy :git do |tags|
+        tags.filter_map { |tag| tag[/^(\d+(?:\.\d+)+)$/, 1] }
+      end
+    end
+
     caveats do
         <<~EOS
             #{token} can be enabled/disabled with the tool setup-ec2monitoring.

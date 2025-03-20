@@ -40,5 +40,7 @@ cask "amazon-ena-ethernet" do
   name "Amazon ENA Ethernet"
   homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html"
 
+  livecheck { skip }
+
   uninstall pkgutil: "com.amazon.ec2.ena-ethernet"
 end

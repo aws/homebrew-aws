@@ -13,10 +13,11 @@
 # limitations under the License.
 
 cask "ec2-instance-connect" do
-    version "2.0.0-2"
+    build_version = "2.0.0-2"
+    version build_version.split("-").first
     sha256 "18b29b7ce662452ad0126c0ec88034165c5959f55b835caf3a3eea5abf3d8d28"
     
-    pkg_file = "ec2-instance-connect-#{version}_universal.pkg"
+    pkg_file = "ec2-instance-connect-#{build_version}_universal.pkg"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-instance-connect/#{pkg_file}",
         verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-instance-connect/"
@@ -52,4 +53,6 @@ cask "ec2-instance-connect" do
     pkg pkg_file
 
     uninstall pkgutil: "com.amazon.ec2-instance-connect.pkg"
+
+    livecheck { skip }
 end

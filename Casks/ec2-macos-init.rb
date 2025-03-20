@@ -29,6 +29,14 @@ cask "ec2-macos-init" do
 
     uninstall pkgutil: "com.amazon.ec2.macos-init"
 
+    livecheck do
+      url "https://github.com/aws/ec2-macos-init.git"
+
+      strategy :git do |tags|
+        tags.filter_map { |tag| tag[/^(\d+(?:\.\d+)+)$/, 1] }
+      end
+    end
+
     caveats do
         <<~EOS
             #{token} must be configured to start on boot.
