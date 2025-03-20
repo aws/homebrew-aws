@@ -25,7 +25,8 @@ cask "amazon-ssm-agent" do
   pkg_file = "amazon-ssm-agent-#{version}_#{arch}.pkg"
 
   # amazon was verified as official when first introduced to the cask
-  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/#{pkg_file}"
+  url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/#{pkg_file}",
+      verified: "aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ssm-agent/"
   name "Amazon SSM Agent"
   homepage "https://github.com/aws/amazon-ssm-agent"
 

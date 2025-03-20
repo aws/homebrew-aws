@@ -19,7 +19,7 @@ cask "ec2-macos-init" do
     pkg_file = "ec2-macos-init-#{version}_universal.pkg"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/#{pkg_file}",
-        verified: "amazon"
+        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-init/"
     name "EC2 macOS Init"
     desc "Launch daemon used to initialize Mac instances within EC2"
     homepage "https://github.com/aws/ec2-macos-init"

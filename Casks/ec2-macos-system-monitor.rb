@@ -20,7 +20,7 @@ cask "ec2-macos-system-monitor" do
     pkg_file = "ec2-macos-system-monitor-#{version}-#{build_version}_universal.pkg"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-system-monitor/#{pkg_file}",
-        verified: "amazon"
+        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-system-monitor/"
     name "EC2 System Monitor for macOS"
     desc "Agent that runs on EC2 Mac instances to provide on-instance metrics in CloudWatch"
     homepage "https://github.com/aws/ec2-macos-system-monitor"

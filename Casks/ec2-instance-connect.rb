@@ -19,7 +19,7 @@ cask "ec2-instance-connect" do
     pkg_file = "ec2-instance-connect-#{version}_universal.pkg"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-instance-connect/#{pkg_file}",
-        verified: "amazon"
+        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-instance-connect/"
     name "EC2 Instance Connect"
     desc "Allows EC2 mac instances to access EC2 Instance Connect"
     homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-methods.html"
