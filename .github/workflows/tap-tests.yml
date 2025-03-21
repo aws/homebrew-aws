@@ -87,9 +87,3 @@ jobs:
       - name: Run brew audit --skip-style on ${{github.repository}}
         run: |
           brew audit --os=macos --arch=all --skip-style --except=version --online --tap ${{github.repository}}
-
-      - name: Generate formula API
-        run: brew generate-formula-api --dry-run
-
-      - name: Generate cask API
-        run: brew generate-cask-api --dry-run
