@@ -19,7 +19,7 @@ cask "amazon-ena-ethernet-dext" do
     depends_on macos: :monterey
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet-dext/amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg",
-        verified: "amazon"
+        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
     sha256 "464cb03d48ef97b032d7efe8af4662af256ef0a8cb292076782be674f00a16e7"
     pkg "amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg"
 
