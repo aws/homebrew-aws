@@ -30,7 +30,7 @@ cask "amazon-ena-ethernet" do
         verified: "aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ena-ethernet/"
     sha256 "bbd9ab0382b306641598d101e7beec571c182d47ebd32efbae1f0e652aa0efa4"
     pkg "amazon-ena-ethernet-#{version}.bigsur.pkg"
-  elsif MacOS.version <= :ventura
+  elsif MacOS.version <= :sequoia
     url "https://aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.monterey.pkg",
         verified: "aws-homebrew.s3-us-west-2.amazonaws.com/cask/amazon-ena-ethernet/"
     sha256 "3cde67c25f339194753256ed911572bfa6a654b46b4af75d548dbcffc0b83634"
