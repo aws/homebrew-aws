@@ -5,10 +5,8 @@ name: Homebrew Tap Tests
 
 on:
   push:
-    branches:
-      - master
-  pull_request: {}
-  merge_group: {}
+  pull_request:
+  merge_group:
 
 permissions:
   # actions helpers do the checkout
