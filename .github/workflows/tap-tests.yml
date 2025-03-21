@@ -82,12 +82,12 @@ jobs:
           test-bot: false
 
       - name: Run brew readall on all casks
-        run: brew readall --os=all --arch=all aws/aws
+        run: brew readall --os=macos --arch=all ${{github.repository}}
 
-      - name: Run brew audit --skip-style on aws/aws
+      - name: Run brew audit --skip-style on ${{github.repository}}
         run: |
-          brew audit --skip-style --except=version --tap=aws/aws
-          
+          brew audit --os=macos --arch=all --skip-style --except=version --online --tap ${{github.repository}}
+
       - name: Generate formula API
         run: brew generate-formula-api --dry-run
 
