@@ -71,4 +71,6 @@ cask "amazon-ssm-agent" do
   pkg pkg_file
 
   uninstall pkgutil: "com.amazon.aws.ssm"
+
+  livecheck { skip }
 end

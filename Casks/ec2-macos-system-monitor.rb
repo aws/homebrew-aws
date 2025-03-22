@@ -73,4 +73,6 @@ cask "ec2-macos-system-monitor" do
                     sudo setup-ec2monitoring disable
         EOS
     end
+
+    livecheck { skip }
 end

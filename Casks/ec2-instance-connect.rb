@@ -52,4 +52,6 @@ cask "ec2-instance-connect" do
     pkg pkg_file
 
     uninstall pkgutil: "com.amazon.ec2-instance-connect.pkg"
+
+    livecheck { skip }
 end

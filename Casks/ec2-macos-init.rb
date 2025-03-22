@@ -37,4 +37,6 @@ cask "ec2-macos-init" do
                     sudo launchctl remove com.amazon.ec2.macos-init
         EOS
     end
+
+    livecheck { skip }
 end
