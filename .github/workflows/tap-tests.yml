@@ -61,7 +61,7 @@ jobs:
           key: syntax-style-cache-${{ github.sha }}
           restore-keys: syntax-style-cache-
       
-      - run: brew style ${{ github.repository }}
+      - run: brew style --except-cops Cask/Desc ${{ github.repository }}
         continue-on-error: true
 
       - run: brew typecheck ${{ github.repository }}

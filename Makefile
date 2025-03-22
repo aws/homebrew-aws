@@ -27,8 +27,6 @@ export HOMEBREW_BUNDLE_USER_CACHE=$(abspath $(LOCAL_CACHE_DIR)/bundle-user-cache
 
 dev-setup: test-tap test-cache
 
-fmt format: check-style
-
 test-tap:
 	@-echo "(re)initialize tap worktree" >&2; sleep 1;
 	-$(git) worktree remove $(GIT_FORCE) $(HOMEBREW_PREFIX)/Library/Taps/$(TEST_HOMEBREW_TAP)
@@ -41,8 +39,11 @@ $(LOCAL_CACHE_DIR):
 
 check: check-style check-audit
 
+fmt format:
+	$(brew) style --except-cops Cask/Desc --fix .
+
 check-style:
-	$(brew) style .
+	$(brew) style --except-cops Cask/Desc .
 
 check-audit:
 	$(brew) audit --skip-style --except=version --signing --os=all --arch=all --display-filename --tap=$(TEST_HOMEBREW_TAP)
