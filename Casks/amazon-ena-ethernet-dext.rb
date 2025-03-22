@@ -27,6 +27,8 @@ cask "amazon-ena-ethernet-dext" do
       disable! date: "2025-03-21", because: "unvalidated operating system major version"
     end
 
+    livecheck { skip }
+
     name "Amazon ENA Ethernet Dext"
     homepage "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html"
 

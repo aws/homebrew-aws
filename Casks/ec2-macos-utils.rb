@@ -28,4 +28,6 @@ cask "ec2-macos-utils" do
     pkg pkg_file
 
     uninstall pkgutil: "com.amazon.ec2.macos-utils"
+
+    livecheck { skip }
 end
