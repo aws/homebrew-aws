@@ -16,7 +16,7 @@ cask "amazon-ena-ethernet-dext" do
     version "1.0.7-p1"
     dextDriverKitVersion = "21.2"
 
-    depends_on macos: :monterey
+    depends_on macos: ">= :monterey"
 
     url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet-dext/amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg",
         verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
@@ -24,7 +24,7 @@ cask "amazon-ena-ethernet-dext" do
     pkg "amazon-ena-ethernet-dext-app-#{version}-dk#{dextDriverKitVersion}-1.pkg"
 
     on_intel do
-      disable! date: "2025-03-21", because: "unvalidated operating system major version"
+      disable! date: "2025-03-21", because: "unvalidated system configuration"
     end
 
     livecheck { skip }
