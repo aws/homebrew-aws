@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "ec2-macos-system-monitor" do
-    version "1.3.0"
-    sha256 "6ac6170197065b1eac00ca5694a31375eb3b0da8557c8ee417b5846b50181b50"
+    version "1.3.1"
+    sha256 "0880a9cc4ecbd28320c1c1606e5db64c4a389dbdcad150717e698dfc4bbda541"
 
     build_version = "1"
     pkg_file = "ec2-macos-system-monitor-#{version}-#{build_version}_universal.pkg"
