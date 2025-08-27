@@ -13,8 +13,8 @@
 # limitations under the License.
 
 cask "ec2-instance-connect" do
-    version "2.0.0-2"
-    sha256 "18b29b7ce662452ad0126c0ec88034165c5959f55b835caf3a3eea5abf3d8d28"
+    version "2.0.0-5"
+    sha256 "c3dd441b7b6bdd7c3be65f92b79dffa8719ac9d81301ca69c21bf950dfb1929c"
     
     pkg_file = "ec2-instance-connect-#{version}_universal.pkg"
 
