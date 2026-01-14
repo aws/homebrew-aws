@@ -15,8 +15,8 @@
 class AmazonEfsUtils < Formula
   include Language::Python::Virtualenv
 
-  version "2.1.0"
-  sha256 "68af290857284d4449e0d2ecbbd2aad83b1cc2c937da8beb16aeaae0429aab03"
+  version "2.4.1"
+  sha256 "03c0b8a217cfd8d0239d72935a3a5848bab2d5aa575b5e83d18bac92d555979b"
   
   url "https://aws-homebrew.s3.us-west-2.amazonaws.com/formula/amazon-efs-utils/v#{version}.tar.gz"
   desc "Utilities for Amazon Elastic File System (EFS)"
@@ -27,143 +27,143 @@ class AmazonEfsUtils < Formula
   depends_on "stunnel"
 
   resource "atomicwrites" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/atomicwrites-1.4.0.tar.gz"
-    sha256 "ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/atomicwrites-1.4.1.tar.gz"
+    sha256 "81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
   end
 
   resource "attrs" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/attrs-17.4.0.tar.gz"
-    sha256 "1c7960ccfd6a005cd9f7ba884e6316b5e430a3f1a6c37c5f87d8b43f83b54ec9"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/attrs-25.4.0.tar.gz"
+    sha256 "16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"
   end
 
   resource "botocore" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/botocore-1.34.140.tar.gz"
-    sha256 "86302b2226c743b9eec7915a4c6cfaffd338ae03989cd9ee181078ef39d1ab39"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/botocore-1.42.13.tar.gz"
+    sha256 "7e4cf14bd5719b60600fb45d2bb3ae140feb3c182a863b93093aafce7f93cfee"
   end
 
   resource "configparser" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/configparser-7.0.0.tar.gz"
-    sha256 "af3c618a67aaaedc4d689fd7317d238f566b9aa03cae50102e92d7f0dfe78ba0"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/configparser-7.2.0.tar.gz"
+    sha256 "b629cc8ae916e3afbd36d1b3d093f34193d851e11998920fdcfc4552218b7b70"
   end
 
   resource "coverage" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/coverage-7.6.0.tar.gz"
-    sha256 "289cc803fa1dc901f84701ac10c9ee873619320f2f9aff38794db4a4a0268d51"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/coverage-7.13.0.tar.gz"
+    sha256 "a394aa27f2d7ff9bc04cf703817773a59ad6dfbd577032e690f961d2460ee936"
   end
 
   resource "entrypoints" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/entrypoints-0.3.tar.gz"
-    sha256 "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/entrypoints-0.4.tar.gz"
+    sha256 "b706eddaa9218a19ebcd67b56818f05bb27589b1ca9e8d797b74affad4ccacd4"
   end
 
   resource "flake8" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/flake8-7.1.0.tar.gz"
-    sha256 "48a07b626b55236e0fb4784ee69a465fbf59d79eec1f5b4785c3d3bc57d17aa5"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/flake8-7.3.0.tar.gz"
+    sha256 "fe044858146b9fc69b551a4b490d69cf960fcb78ad1edcb84e7fbb1b4a8e3872"
   end
 
   resource "funcsigs" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/funcsigs-1.0.2.tar.gz"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/funcsigs-1.0.2.tar.gz"
     sha256 "a7bb0f2cf3a3fd1ab2732cb49eba4252c2af4240442415b4abce3b87022a8f50"
   end
 
   resource "jmespath" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/jmespath-0.10.0.tar.gz"
-    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/jmespath-1.0.1.tar.gz"
+    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
   resource "mccabe" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/mccabe-0.6.1.tar.gz"
-    sha256 "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/mccabe-0.7.0.tar.gz"
+    sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
   end
 
   resource "mock" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/mock-5.1.0.tar.gz"
-    sha256 "5e96aad5ccda4718e0a229ed94b2024df75cc2d55575ba5762d31f5767b8767d"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/mock-5.2.0.tar.gz"
+    sha256 "4e460e818629b4b173f32d08bf30d3af8123afbb8e04bb5707a1fd4799e503f0"
   end
 
   resource "more-itertools" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/more-itertools-8.6.0.tar.gz"
-    sha256 "b3a9005928e5bed54076e6e549c792b306fddfe72b2d1d22dd63d42d5d3899cf"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/more_itertools-10.8.0.tar.gz"
+    sha256 "f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd"
   end
 
   resource "packaging" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/packaging-20.9.tar.gz"
-    sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pbr" do
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/resource/a369d717/pbr-5.10.0.tar.gz"
-    sha256 "cfcc4ff8e698256fc17ea3ff796478b050852585aa5bae79ecd05b2ab7b39b9a"
+    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/resource/5ab7d62d/pbr-7.0.3.tar.gz"
+    sha256 "b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29"
   end
 
   resource "pluggy" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pluggy-0.13.0.tar.gz"
-    sha256 "fa5fa1622fa6dd5c030e9cad086fa19ef6a0cf6d7a2d12318e10cb49d6d68f34"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pluggy-1.6.0.tar.gz"
+    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
   end
 
   resource "py" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/py-1.8.0.tar.gz"
-    sha256 "dc639b046a6e2cff5bbe40194ad65936d6ba360b52b3c3fe1d08a82dd50b5e53"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/py-1.11.0.tar.gz"
+    sha256 "51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"
   end
 
   resource "pycodestyle" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pycodestyle-2.6.0.tar.gz"
-    sha256 "c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pycodestyle-2.14.0.tar.gz"
+    sha256 "c4b5b517d278089ff9d0abdec919cd97262a3367449ea1c8b49b91529167b783"
   end
 
   resource "pyflakes" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pyflakes-2.2.0.tar.gz"
-    sha256 "35b2d75ee967ea93b55750aa9edbbf72813e06a66ba54438df2cfac9e3c27fc8"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pyflakes-3.4.0.tar.gz"
+    sha256 "b24f96fafb7d2ab0ec5075b7350b3d2d2218eab42003821c06344973d3ea2f58"
   end
 
   resource "pyparsing" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pyparsing-2.4.7.tar.gz"
-    sha256 "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pyparsing-3.2.5.tar.gz"
+    sha256 "2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6"
   end
 
   resource "pytest" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pytest-8.2.2.tar.gz"
-    sha256 "de4bb8104e201939ccdc688b27a89a7be2079b22e2bd2b07f806b6ba71117977"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pytest-9.0.2.tar.gz"
+    sha256 "75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11"
   end
 
   resource "pytest-cov" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pytest-cov-5.0.0.tar.gz"
-    sha256 "5837b58e9f6ebd335b0f8060eecce69b662415b16dc503883a02f45dfeb14857"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pytest_cov-7.0.0.tar.gz"
+    sha256 "33c97eda2e049a0c5298e91f519302a1334c26ac65c1a483d6206fd458361af1"
   end
 
   resource "pytest-html" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pytest-html-4.1.1.tar.gz"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pytest_html-4.1.1.tar.gz"
     sha256 "70a01e8ae5800f4a074b56a4cb1025c8f4f9b038bba5fe31e3c98eb996686f07"
   end
 
   resource "pytest-metadata" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pytest-metadata-3.1.1.tar.gz"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pytest_metadata-3.1.1.tar.gz"
     sha256 "d2a29b0355fbc03f168aa96d41ff88b1a3b44a3b02acbe491801c98a048017c8"
   end
 
   resource "pytest-mock" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/pytest-mock-3.14.0.tar.gz"
-    sha256 "2719255a1efeceadbc056d6bf3df3d1c5015530fb40cf347c0f9afac88410bd0"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/pytest_mock-3.15.1.tar.gz"
+    sha256 "1849a238f6f396da19762269de72cb1814ab44416fa73a8686deac10b0d87a0f"
   end
 
   resource "python-dateutil" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/python-dateutil-2.8.1.tar.gz"
-    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/python-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "six" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/six-1.11.0.tar.gz"
-    sha256 "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "urllib3" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/urllib3-1.25.11.tar.gz"
-    sha256 "8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/urllib3-2.6.2.tar.gz"
+    sha256 "016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"
   end
 
   resource "wcwidth" do
-    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/a369d717/wcwidth-0.2.5.tar.gz"
-    sha256 "c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"
+    url "https://aws-homebrew.s3-us-west-2.amazonaws.com/resource/5ab7d62d/wcwidth-0.2.14.tar.gz"
+    sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
   def install
@@ -210,11 +210,11 @@ class AmazonEfsUtils < Formula
 
   def caveats
     <<~EOS
-      To start using Amazon EFS on EC2 x86 Mac instances (mac1.metal):
+      To start using Amazon EFS on EC2 x86 Mac instances:
         sudo mkdir -p /Library/Filesystems/efs.fs/Contents/Resources
         sudo ln -s /usr/local/bin/mount.efs /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
 
-      To start using Amazon EFS on EC2 M1 Mac instances (mac2.metal):
+      To start using Amazon EFS on EC2 ARM Mac instances:
         sudo mkdir -p /Library/Filesystems/efs.fs/Contents/Resources
         sudo ln -s /opt/homebrew/bin/mount.efs /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
 
