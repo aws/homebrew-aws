@@ -72,7 +72,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        macos: [macos-latest, macos-13]
+        macos: [macos-latest, macos-14]
     runs-on: ${{ matrix.macos }}
     steps:
       - name: Set up Homebrew
