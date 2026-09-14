@@ -18,8 +18,7 @@ cask "ec2-macos-utils" do
 
     pkg_file = "ec2-macos-utils-#{version}_universal.pkg"
 
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-utils/#{pkg_file}",
-        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
+    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/ec2-macos-utils/#{pkg_file}"
     name "EC2 macOS Utils"
     desc "Utilities for EC2 Mac instances"
     homepage "https://github.com/aws/ec2-macos-utils"
