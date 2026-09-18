@@ -15,28 +15,26 @@
 cask "amazon-ena-ethernet" do
   version "1.5.2-2"
 
-  if MacOS.version <= :mojave
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.mojave.pkg",
-        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
-    sha256 "17220a622a37c49dd874c8cd0ff44a5223dbdc6fd9dbb22861b84d90abb79f3b"
-    pkg "amazon-ena-ethernet-#{version}.mojave.pkg"
-  elsif MacOS.version <= :catalina
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.catalina.pkg",
-        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
-    sha256 "183dfd41b56883d84d3fa79a724fb6613d598c6d74c8d8a292eb885b0ffa5167"
-    pkg "amazon-ena-ethernet-#{version}.catalina.pkg"
-  elsif MacOS.version <= :big_sur
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.bigsur.pkg",
-        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
-    sha256 "bbd9ab0382b306641598d101e7beec571c182d47ebd32efbae1f0e652aa0efa4"
-    pkg "amazon-ena-ethernet-#{version}.bigsur.pkg"
-  elsif MacOS.version <= :sequoia
-    url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.monterey.pkg",
-        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
-    sha256 "3cde67c25f339194753256ed911572bfa6a654b46b4af75d548dbcffc0b83634"
-    pkg "amazon-ena-ethernet-#{version}.monterey.pkg"
-  else
-    disable! date: "2025-03-21", because: "unvalidated operating system major version"
+  url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.monterey.pkg"
+  sha256 "3cde67c25f339194753256ed911572bfa6a654b46b4af75d548dbcffc0b83634"
+  pkg "amazon-ena-ethernet-#{version}.monterey.pkg"
+
+  on_macos do
+    if MacOS.version <= :mojave
+      url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.mojave.pkg"
+      sha256 "17220a622a37c49dd874c8cd0ff44a5223dbdc6fd9dbb22861b84d90abb79f3b"
+      pkg "amazon-ena-ethernet-#{version}.mojave.pkg"
+    elsif MacOS.version <= :catalina
+      url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.catalina.pkg"
+      sha256 "183dfd41b56883d84d3fa79a724fb6613d598c6d74c8d8a292eb885b0ffa5167"
+      pkg "amazon-ena-ethernet-#{version}.catalina.pkg"
+    elsif MacOS.version <= :big_sur
+      url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ena-ethernet/amazon-ena-ethernet-#{version}.bigsur.pkg"
+      sha256 "bbd9ab0382b306641598d101e7beec571c182d47ebd32efbae1f0e652aa0efa4"
+      pkg "amazon-ena-ethernet-#{version}.bigsur.pkg"
+    else
+      disable! date: "2025-03-21", because: "unvalidated operating system major version"
+    end
   end
 
   livecheck { skip }
