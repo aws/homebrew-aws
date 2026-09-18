@@ -166,6 +166,9 @@ class AmazonEfsUtils < Formula
     sha256 "cdc4e4262d6ef9a1a57e018384cbeb1208d8abbc64176027e2c2455c81313159"
   end
 
+  # network used to provision venv
+  deny_network_access! :postinstall
+
   def install
     venv = virtualenv_create(libexec, "python3")
     %w[atomicwrites attrs botocore configparser coverage entrypoints flake8 funcsigs jmespath mccabe
