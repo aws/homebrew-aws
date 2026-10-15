@@ -24,7 +24,8 @@ cask "amazon-ssm-agent" do
   end
   pkg_file = "amazon-ssm-agent-#{version}_#{arch}.pkg"
 
-  url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ssm-agent/#{pkg_file}"
+  url "https://aws-homebrew.s3.us-west-2.amazonaws.com/cask/amazon-ssm-agent/#{pkg_file}",
+        verified: "aws-homebrew.s3.us-west-2.amazonaws.com/cask/#{token}/"
   name "Amazon SSM Agent"
   homepage "https://github.com/aws/amazon-ssm-agent"
 
@@ -60,12 +61,12 @@ cask "amazon-ssm-agent" do
   script.close
 
   # This is for upgrading from old versions which don't have uninstall_preflight
-  preflight_steps do
-    run "/bin/bash", args: [script.path], sudo: true
+  preflight do
+    system_command "/bin/bash", args: [script.path], sudo: true
   end
 
-  uninstall_preflight_steps do
-    run "/bin/bash", args: [script.path], sudo: true
+  uninstall_preflight do
+    system_command "/bin/bash", args: [script.path], sudo: true
   end
 
   pkg pkg_file
