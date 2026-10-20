@@ -223,6 +223,10 @@ class AmazonEfsUtils < Formula
       To stop using Amazon EFS on EC2 Mac instances:
         sudo rm /Library/Filesystems/efs.fs/Contents/Resources/mount_efs
 
+      When upgrading from efs-utils 2.x with watchdog enabled, unload and remove the watchdog LaunchAgent plist:
+        sudo launchctl unload /Library/LaunchAgents/amazon-efs-mount-watchdog.plist
+        sudo rm /Library/LaunchAgents/amazon-efs-mount-watchdog.plist
+
       To enable watchdog for TLS mounts:
         sudo cp #{libexec}/amazon-efs-mount-watchdog.plist /Library/LaunchDaemons
         sudo launchctl bootstrap system /Library/LaunchDaemons/amazon-efs-mount-watchdog.plist
